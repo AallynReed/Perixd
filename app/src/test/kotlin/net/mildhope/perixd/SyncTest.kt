@@ -33,6 +33,13 @@ class SyncTest {
     }
 
     @Test
+    fun spaceIdAndTokenMatchTheServersDeletionPage() {
+        val keys = SyncKeys(ByteArray(32) { it.toByte() })
+        assertEquals("43e2b28c48ba16f86e5f9cfef85ea9be", keys.spaceId)
+        assertEquals("GsSR7U0ZZc8GtAoCOKAFj8MLcfcdMEIwryoVl74_opo", keys.auth)
+    }
+
+    @Test
     fun sealedRecordsOpenOnlyWithTheSameSecretAndId() {
         val keys = SyncKeys(ByteArray(32) { it.toByte() })
         val id = keys.recordId("d:2026-10-18")
