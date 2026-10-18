@@ -74,9 +74,11 @@ fun TodayScreen(
     now: ZonedDateTime,
     padding: PaddingValues,
     canNotify: Boolean,
+    canExact: Boolean,
     onEditDay: (LocalDate) -> Unit,
     onOpenTab: (Tab) -> Unit,
     onAllowNotifications: () -> Unit,
+    onAllowExact: () -> Unit,
 ) {
     val res = LocalResources.current
     val today = now.toLocalDate()
@@ -93,9 +95,9 @@ fun TodayScreen(
                 Text(Labels.longDay(res, today), style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
-        if (!canNotify && method.regimen() != null && data.settings.notifications.doseEnabled) {
-            item { NotificationsOffCard(onAllowNotifications) }
-        }
+        val reminds = method.regimen() != null && data.settings.notifications.doseEnabled
+        if (reminds && !canNotify) item { PermissionCard(stringResource(R.string.notifications_off), onAllowNotifications) }
+        else if (reminds && !canExact) item { PermissionCard(stringResource(R.string.exact_alarms_card), onAllowExact) }
         item { CycleCard(data, forecast, today, onEditDay, onOpenTab) }
         if (method.regimen() != null) item { MethodCard(data, now, onOpenTab) }
         item { LogCard(data, today, onEditDay) }
@@ -109,12 +111,12 @@ fun TodayScreen(
 }
 
 @Composable
-private fun NotificationsOffCard(onAllow: () -> Unit) {
+private fun PermissionCard(text: String, onAllow: () -> Unit) {
     Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)) {
         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
             Icon(Icons.Filled.Warning, null, tint = MaterialTheme.colorScheme.onErrorContainer)
             Spacer(Modifier.width(12.dp))
-            Text(stringResource(R.string.notifications_off), Modifier.weight(1f), color = MaterialTheme.colorScheme.onErrorContainer)
+            Text(text, Modifier.weight(1f), color = MaterialTheme.colorScheme.onErrorContainer)
             TextButton(onClick = onAllow) { Text(stringResource(R.string.allow)) }
         }
     }

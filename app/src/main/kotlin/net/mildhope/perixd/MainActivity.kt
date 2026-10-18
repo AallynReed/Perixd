@@ -2,9 +2,11 @@ package net.mildhope.perixd
 
 import android.Manifest
 import android.content.Intent
+import android.net.Uri
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.BackHandler
@@ -106,6 +108,12 @@ private fun PerixdRoot(data: Data) {
     var now by remember { mutableStateOf(ZonedDateTime.now()) }
     val today = now.toLocalDate()
     var canNotify by remember { mutableStateOf(Reminders.canNotify(context)) }
+    var canExact by remember { mutableStateOf(Reminders.canScheduleExact(context)) }
+    val askExact = {
+        if (Build.VERSION.SDK_INT >= 31) {
+            runCatching { context.startActivity(Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM, Uri.parse("package:${context.packageName}"))) }
+        }
+    }
     val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { canNotify = Reminders.canNotify(context) }
     val askNotifications = {
         if (Build.VERSION.SDK_INT >= 33) permission.launch(Manifest.permission.POST_NOTIFICATIONS)
@@ -115,6 +123,7 @@ private fun PerixdRoot(data: Data) {
     LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
         now = ZonedDateTime.now()
         canNotify = Reminders.canNotify(context)
+        canExact = Reminders.canScheduleExact(context)
     }
     LaunchedEffect(now) {
         delay(60_000L - now.second * 1_000L - now.nano / 1_000_000 + 50)
@@ -157,7 +166,7 @@ private fun PerixdRoot(data: Data) {
         Box(Modifier.fillMaxSize().padding(top = insets.calculateTopPadding()).clipToBounds(), contentAlignment = Alignment.TopCenter) {
             Box(Modifier.widthIn(max = 640.dp)) {
                 when (tab) {
-                Tab.TODAY -> TodayScreen(data, now, padding, canNotify, { editing = it }, { tab = it }, askNotifications)
+                Tab.TODAY -> TodayScreen(data, now, padding, canNotify, canExact, { editing = it }, { tab = it }, askNotifications, askExact)
                 Tab.CALENDAR -> CalendarScreen(data, today, padding) { editing = it }
                 Tab.INSIGHTS -> InsightsScreen(data, today, padding)
                 Tab.SETTINGS -> SettingsScreen(data, today, padding, canNotify, askNotifications)
