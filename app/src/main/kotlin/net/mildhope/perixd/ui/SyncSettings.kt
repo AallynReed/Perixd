@@ -68,6 +68,16 @@ fun LazyListScope.syncSection(state: SyncState?, onDialog: (String) -> Unit) {
         ValueRow(stringResource(R.string.sync_on, host), status, { Sync.request(context) }, subtitle = stringResource(if (state.fcm != null) R.string.sync_push_on else R.string.sync_push_off))
     }
     item { ValueRow(stringResource(R.string.sync_add_device), "", { onDialog("sync-qr") }, subtitle = stringResource(R.string.sync_add_device_hint)) }
+    item {
+        val context = LocalContext.current
+        val id = state.keys.spaceId.take(12).chunked(4).joinToString(" ")
+        val copied = stringResource(R.string.copied)
+        ValueRow(stringResource(R.string.sync_id), id, {
+            context.getSystemService(android.content.ClipboardManager::class.java)
+                .setPrimaryClip(android.content.ClipData.newPlainText("Perixd Sync ID", id))
+            Toast.makeText(context, copied, Toast.LENGTH_SHORT).show()
+        }, subtitle = stringResource(R.string.sync_id_hint))
+    }
     item { ValueRow(stringResource(R.string.sync_stop), "", { onDialog("sync-stop") }) }
 }
 

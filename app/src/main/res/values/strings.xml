@@ -39,6 +39,7 @@
     <string name="open_calendar">Open calendar</string>
     <string name="open_settings">Open settings</string>
     <string name="setup_method_text">Tell Perixd where you are in your current pack or cycle to see it here and get reminders.</string>
+    <string name="exact_alarms_card">Allow Perixd to set alarms so reminders arrive exactly on time. Without it, Android may deliver them late.</string>
     <string name="notifications_off">Notifications are off, so reminders can\'t reach you.</string>
 
     <string name="period_day">Period, day %1$d</string>
@@ -260,6 +261,10 @@
 
     <string name="section_privacy">Privacy</string>
     <string name="privacy_text">Everything you log stays on this device unless you turn on sync. Perixd has no ads and no analytics, and its data is left out of cloud backups.</string>
+    <string name="sync_id">Sync ID</string>
+    <string name="sync_id_hint">Tap to copy. Quote it if you ask by email for your synced data to be deleted.</string>
+    <string name="copied">Copied</string>
+    <string name="privacy_policy">Privacy policy</string>
     <string name="delete_logs">Delete all logs</string>
     <string name="delete_logs_hint">Removes every logged day and dose. Settings stay.</string>
     <string name="delete_logs_confirm">This removes every logged day, symptom and dose from this device. It can\'t be undone.</string>

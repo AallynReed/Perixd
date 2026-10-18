@@ -37,6 +37,7 @@
     <string name="open_calendar">Abrir calendário</string>
     <string name="open_settings">Abrir definições</string>
     <string name="setup_method_text">Indique em que ponto está da embalagem ou do ciclo atual para o ver aqui e receber lembretes.</string>
+    <string name="exact_alarms_card">Permita que o Perixd defina alarmes para os lembretes chegarem à hora certa. Sem isso, o Android pode entregá-los com atraso.</string>
     <string name="notifications_off">As notificações estão desligadas, por isso os lembretes não lhe chegam.</string>
 
     <string name="period_day">Menstruação, dia %1$d</string>
@@ -258,6 +259,10 @@
 
     <string name="section_privacy">Privacidade</string>
     <string name="privacy_text">Tudo o que regista fica neste dispositivo, a menos que ative a sincronização. O Perixd não tem anúncios nem estatísticas de utilização, e os dados ficam fora das cópias de segurança na nuvem.</string>
+    <string name="sync_id">ID de sincronização</string>
+    <string name="sync_id_hint">Toque para copiar. Indique-o se pedir por email que os seus dados sincronizados sejam apagados.</string>
+    <string name="copied">Copiado</string>
+    <string name="privacy_policy">Política de privacidade</string>
     <string name="delete_logs">Eliminar todos os registos</string>
     <string name="delete_logs_hint">Remove todos os dias e tomas registados. As definições mantêm-se.</string>
     <string name="delete_logs_confirm">Isto remove deste dispositivo todos os dias, sintomas e tomas registados. Não é possível anular.</string>

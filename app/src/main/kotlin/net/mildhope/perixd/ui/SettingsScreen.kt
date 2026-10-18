@@ -232,6 +232,10 @@ fun SettingsScreen(data: Data, today: LocalDate, padding: PaddingValues, canNoti
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
         }
+        item {
+            val path = if (Labels.locale(res).language == "pt") "privacy/pt" else "privacy"
+            ValueRow(stringResource(R.string.privacy_policy), "", { open(Intent(Intent.ACTION_VIEW, Uri.parse("${Sync.DEFAULT_SERVER}/$path"))) })
+        }
         item { ValueRow(stringResource(R.string.delete_logs), "", { dialog = "delete" }, subtitle = stringResource(R.string.delete_logs_hint)) }
         item {
             val version = runCatching { context.packageManager.getPackageInfo(context.packageName, 0).versionName }.getOrNull().orEmpty()
