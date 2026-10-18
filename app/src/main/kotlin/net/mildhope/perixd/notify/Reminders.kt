@@ -38,7 +38,7 @@ import java.time.LocalDate
 import java.time.ZonedDateTime
 
 object Reminders {
-    const val CHANNEL_DOSE = "dose"
+    const val CHANNEL_DOSE = "dose_reminders"
     const val CHANNEL_CYCLE = "cycle"
     const val CHANNEL_LOG = "log"
     private const val ID_DOSE = 1
@@ -49,8 +49,9 @@ object Reminders {
 
     fun createChannels(context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
+        manager.deleteNotificationChannel("dose")
         manager.createNotificationChannels(listOf(
-            NotificationChannel(CHANNEL_DOSE, context.getString(R.string.channel_dose), NotificationManager.IMPORTANCE_HIGH),
+            NotificationChannel(CHANNEL_DOSE, context.getString(R.string.channel_dose), NotificationManager.IMPORTANCE_HIGH).apply { enableVibration(true) },
             NotificationChannel(CHANNEL_CYCLE, context.getString(R.string.channel_cycle), NotificationManager.IMPORTANCE_DEFAULT),
             NotificationChannel(CHANNEL_LOG, context.getString(R.string.channel_log), NotificationManager.IMPORTANCE_DEFAULT),
         ))
