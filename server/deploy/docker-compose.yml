@@ -8,6 +8,8 @@ services:
       - "10.8.0.253:8480:8080"
     volumes:
       - ./data:/data
+    environment:
+      PERIXD_CONTACT: perixd@mildhope.net
     read_only: true
     cap_drop: [ALL]
     security_opt: ["no-new-privileges:true"]
