@@ -254,11 +254,42 @@
     <string name="language">Idioma</string>
 
     <string name="section_privacy">Privacidade</string>
-    <string name="privacy_text">Tudo o que regista fica neste dispositivo. O Perixd não tem acesso à internet, anúncios nem estatísticas de utilização, e os dados ficam fora das cópias de segurança na nuvem.</string>
+    <string name="privacy_text">Tudo o que regista fica neste dispositivo, a menos que ative a sincronização. O Perixd não tem anúncios nem estatísticas de utilização, e os dados ficam fora das cópias de segurança na nuvem.</string>
     <string name="delete_logs">Eliminar todos os registos</string>
     <string name="delete_logs_hint">Remove todos os dias e tomas registados. As definições mantêm-se.</string>
     <string name="delete_logs_confirm">Isto remove deste dispositivo todos os dias, sintomas e tomas registados. Não é possível anular.</string>
     <string name="about">Perixd %1$s, software livre sob a GNU AGPL 3.0.</string>
+
+    <string name="section_sync">Sincronizar entre dispositivos</string>
+    <string name="sync_setup">Configurar a sincronização neste dispositivo</string>
+    <string name="sync_setup_hint">Cria um espaço encriptado num servidor; depois adicione os outros dispositivos.</string>
+    <string name="sync_setup_text">Os registos e definições são encriptados neste dispositivo antes de saírem dele. O servidor só guarda dados que não consegue ler.</string>
+    <string name="sync_server">Servidor</string>
+    <string name="sync_start">Começar</string>
+    <string name="sync_join">Juntar-se à sincronização de outro dispositivo</string>
+    <string name="sync_join_hint">Leia o código QR que o outro dispositivo mostra.</string>
+    <string name="sync_join_text">No dispositivo que já sincroniza, abra Definições, Adicionar outro dispositivo, e leia o código que aparece.</string>
+    <string name="sync_scan">Ler código QR</string>
+    <string name="sync_paste">Ou cole uma ligação de emparelhamento</string>
+    <string name="sync_bad_link">Isto não é uma ligação de emparelhamento do Perixd.</string>
+    <string name="sync_join_button">Juntar</string>
+    <string name="sync_join_confirm">Este dispositivo vai sincronizar com %1$s. Os registos juntam-se aos do outro dispositivo e, em cada dia, fica a alteração mais recente.</string>
+    <string name="sync_on">A sincronizar com %1$s</string>
+    <string name="sync_last">Sincronizado às %1$s, toque para sincronizar agora</string>
+    <string name="sync_never">Ainda não sincronizado, toque para sincronizar agora</string>
+    <string name="sync_error">A última sincronização falhou: %1$s</string>
+    <string name="sync_push_on">As alterações chegam aos outros dispositivos em segundos.</string>
+    <string name="sync_push_off">Este servidor não tem notificações push, por isso os outros dispositivos atualizam ao abrir a app e à hora dos lembretes.</string>
+    <string name="sync_add_device">Adicionar outro dispositivo</string>
+    <string name="sync_add_device_hint">Mostra um código QR para ler nele.</string>
+    <string name="sync_qr_title">Leia no outro dispositivo</string>
+    <string name="sync_qr_text">No Perixd do outro dispositivo, abra Definições, Juntar-se à sincronização de outro dispositivo, e leia este código. Quem o ler consegue ver os seus dados sincronizados, por isso não o partilhe.</string>
+    <string name="sync_stop">Parar de sincronizar neste dispositivo</string>
+    <string name="sync_stop_text">Este dispositivo mantém os dados e deixa de sincronizar.</string>
+    <string name="sync_wipe">Apagar também os dados sincronizados do servidor, para todos os dispositivos</string>
+    <string name="sync_stop_button">Parar</string>
+    <string name="sync_failed">Não foi possível concluir: %s</string>
+    <string name="privacy_text_sync">O que regista é encriptado de ponta a ponta antes de sincronizar: o servidor não o consegue ler. O Perixd não tem anúncios nem estatísticas de utilização, e os dados ficam fora das cópias de segurança na nuvem.</string>
 
     <plurals name="days">
         <item quantity="one">%1$d dia</item>

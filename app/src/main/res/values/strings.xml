@@ -256,11 +256,42 @@
     <string name="language">Language</string>
 
     <string name="section_privacy">Privacy</string>
-    <string name="privacy_text">Everything you log stays on this device. Perixd has no internet access, no ads and no analytics, and its data is left out of cloud backups.</string>
+    <string name="privacy_text">Everything you log stays on this device unless you turn on sync. Perixd has no ads and no analytics, and its data is left out of cloud backups.</string>
     <string name="delete_logs">Delete all logs</string>
     <string name="delete_logs_hint">Removes every logged day and dose. Settings stay.</string>
     <string name="delete_logs_confirm">This removes every logged day, symptom and dose from this device. It can\'t be undone.</string>
     <string name="about">Perixd %1$s, free software under the GNU AGPL 3.0.</string>
+
+    <string name="section_sync">Sync between devices</string>
+    <string name="sync_setup">Set up sync on this device</string>
+    <string name="sync_setup_hint">Starts an encrypted space on a sync server; then add your other devices.</string>
+    <string name="sync_setup_text">Your logs and settings are encrypted on this device before they leave it. The server only stores data it can\'t read.</string>
+    <string name="sync_server">Server</string>
+    <string name="sync_start">Start</string>
+    <string name="sync_join">Join another device\'s sync</string>
+    <string name="sync_join_hint">Scan the QR code your other device shows.</string>
+    <string name="sync_join_text">On the device that already syncs, open Settings, Add another device, and scan the code it shows.</string>
+    <string name="sync_scan">Scan QR code</string>
+    <string name="sync_paste">Or paste a pairing link</string>
+    <string name="sync_bad_link">That isn\'t a Perixd pairing link.</string>
+    <string name="sync_join_button">Join</string>
+    <string name="sync_join_confirm">This device will sync with %1$s. Its logs merge with the other device\'s, and the newest change to each day wins.</string>
+    <string name="sync_on">Syncing with %1$s</string>
+    <string name="sync_last">Last synced at %1$s, tap to sync now</string>
+    <string name="sync_never">Not synced yet, tap to sync now</string>
+    <string name="sync_error">Last sync failed: %1$s</string>
+    <string name="sync_push_on">Changes reach your other devices within seconds.</string>
+    <string name="sync_push_off">This server has no push, so other devices update when opened and at reminder time.</string>
+    <string name="sync_add_device">Add another device</string>
+    <string name="sync_add_device_hint">Shows a QR code to scan on it.</string>
+    <string name="sync_qr_title">Scan on your other device</string>
+    <string name="sync_qr_text">In Perixd on the other device, open Settings, Join another device\'s sync, and scan this code. Anyone who scans it can read your synced data, so don\'t share it.</string>
+    <string name="sync_stop">Stop syncing on this device</string>
+    <string name="sync_stop_text">This device keeps its data and stops syncing.</string>
+    <string name="sync_wipe">Also delete the synced data from the server for every device</string>
+    <string name="sync_stop_button">Stop</string>
+    <string name="sync_failed">Couldn\'t complete it: %s</string>
+    <string name="privacy_text_sync">What you log is end-to-end encrypted before it syncs: the server can\'t read it. Perixd has no ads and no analytics, and its data is left out of cloud backups.</string>
 
     <plurals name="days">
         <item quantity="one">%1$d day</item>

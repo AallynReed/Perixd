@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -38,6 +39,7 @@ import net.mildhope.perixd.domain.dayIndex
 import net.mildhope.perixd.domain.isHormonal
 import net.mildhope.perixd.domain.regimen
 import net.mildhope.perixd.notify.Reminders
+import net.mildhope.perixd.sync.Sync
 import net.mildhope.perixd.store
 import java.time.LocalDate
 import java.time.LocalTime
@@ -62,6 +64,7 @@ fun SettingsScreen(data: Data, today: LocalDate, padding: PaddingValues, canNoti
     val n = s.notifications
     val regimen = m.regimen()
     var dialog by rememberSaveable { mutableStateOf<String?>(null) }
+    val sync by Sync.state.collectAsState()
     fun notifications(change: Notifications.() -> Notifications) = store.update { it.withNotifications(change) }
     fun time(t: LocalTime) = Labels.time(context, t)
     fun open(intent: Intent) = runCatching { context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
@@ -220,10 +223,12 @@ fun SettingsScreen(data: Data, today: LocalDate, padding: PaddingValues, canNoti
             }
         }
 
+        syncSection(sync) { dialog = it }
+
         item { SectionTitle(stringResource(R.string.section_privacy)) }
         item {
             Text(
-                stringResource(R.string.privacy_text), style = MaterialTheme.typography.bodyMedium,
+                stringResource(if (sync == null) R.string.privacy_text else R.string.privacy_text_sync), style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
         }
@@ -271,6 +276,7 @@ fun SettingsScreen(data: Data, today: LocalDate, padding: PaddingValues, canNoti
             stringResource(R.string.theme), ThemeMode.entries.map { Choice(it, stringResource(themeName(it))) },
             s.theme, { v -> store.update { it.withSettings { copy(theme = v) } } }, close,
         )
+        "sync-setup", "sync-join", "sync-qr", "sync-stop" -> SyncDialogs(dialog, sync, close)
         "delete" -> AlertDialog(
             onDismissRequest = close,
             title = { Text(stringResource(R.string.delete_logs)) },

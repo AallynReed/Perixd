@@ -1,6 +1,7 @@
 package net.mildhope.perixd
 
 import android.Manifest
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -38,9 +39,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
 import net.mildhope.perixd.data.Data
 import net.mildhope.perixd.domain.regimen
 import net.mildhope.perixd.notify.Reminders
+import net.mildhope.perixd.sync.Sync
+import net.mildhope.perixd.ui.SyncDialogs
 import net.mildhope.perixd.ui.CalendarScreen
 import net.mildhope.perixd.ui.DayEditor
 import net.mildhope.perixd.ui.InsightsScreen
@@ -54,8 +58,11 @@ import java.time.LocalDate
 import java.time.ZonedDateTime
 
 class MainActivity : ComponentActivity() {
+    private val pairLinks = MutableStateFlow<String?>(null)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (savedInstanceState == null) takePairLink(intent)
         setContent {
             val data by store.data.collectAsState()
             val dark = isDark(data.settings.theme)
@@ -63,13 +70,27 @@ class MainActivity : ComponentActivity() {
                 val style = if (dark) SystemBarStyle.dark(Color.TRANSPARENT) else SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT)
                 enableEdgeToEdge(style, style)
             }
-            PerixdTheme(dark) { PerixdRoot(data) }
+            val pairLink by pairLinks.collectAsState()
+            PerixdTheme(dark) {
+                PerixdRoot(data)
+                pairLink?.let { SyncDialogs("sync-join", null, { pairLinks.value = null }, joinLink = it) }
+            }
         }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        takePairLink(intent)
+    }
+
+    private fun takePairLink(intent: Intent?) {
+        intent?.dataString?.takeIf { it.startsWith("perixd://pair") }?.let { pairLinks.value = it }
     }
 
     override fun onResume() {
         super.onResume()
         Reminders.sync(this)
+        Sync.request(this)
     }
 }
 
