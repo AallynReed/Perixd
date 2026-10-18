@@ -14,7 +14,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
@@ -32,10 +34,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import kotlinx.coroutines.delay
@@ -150,12 +154,14 @@ private fun PerixdRoot(data: Data) {
         },
     ) { insets ->
         val padding = PaddingValues(bottom = insets.calculateBottomPadding())
-        Box(Modifier.padding(top = insets.calculateTopPadding()).clipToBounds()) {
-            when (tab) {
+        Box(Modifier.fillMaxSize().padding(top = insets.calculateTopPadding()).clipToBounds(), contentAlignment = Alignment.TopCenter) {
+            Box(Modifier.widthIn(max = 640.dp)) {
+                when (tab) {
                 Tab.TODAY -> TodayScreen(data, now, padding, canNotify, { editing = it }, { tab = it }, askNotifications)
                 Tab.CALENDAR -> CalendarScreen(data, today, padding) { editing = it }
                 Tab.INSIGHTS -> InsightsScreen(data, today, padding)
                 Tab.SETTINGS -> SettingsScreen(data, today, padding, canNotify, askNotifications)
+                }
             }
         }
     }
