@@ -78,6 +78,9 @@
     <string name="mark_pill">Mark pill %1$d as taken</string>
     <string name="mark_pill_late">Mark pill %1$d (%2$s) as taken</string>
     <string name="mark_done">Mark done: %1$s</string>
+    <string name="undo_dose_title">Mark %1$s as not taken?</string>
+    <string name="undo_dose_text">It goes back in the pack and its reminder comes back.</string>
+    <string name="not_taken">Not taken</string>
     <string name="taken_at">Taken at %1$s</string>
     <string name="done_at">Done at %1$s</string>
     <string name="next_dose">Next: %1$s, %2$s</string>

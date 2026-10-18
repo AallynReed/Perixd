@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -29,7 +30,10 @@ import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.StrokeCap
@@ -260,8 +264,18 @@ private fun MethodCard(data: Data, now: ZonedDateTime, onOpenTab: (Tab) -> Unit)
             val toggle = { date: LocalDate ->
                 context.store.update { if (date in it.doses) it.withDose(date, null) else it.withDose(date, System.currentTimeMillis()) }
             }
+            var confirmUndo by remember { mutableStateOf<LocalDate?>(null) }
+            confirmUndo?.let { date ->
+                AlertDialog(
+                    onDismissRequest = { confirmUndo = null },
+                    title = { Text(stringResource(R.string.undo_dose_title, Labels.position(res, method, date).orEmpty().replaceFirstChar { it.lowercase(Labels.locale(res)) })) },
+                    text = { Text(stringResource(R.string.undo_dose_text)) },
+                    confirmButton = { TextButton(onClick = { toggle(date); confirmUndo = null }) { Text(stringResource(R.string.not_taken)) } },
+                    dismissButton = { TextButton(onClick = { confirmUndo = null }) { Text(stringResource(R.string.cancel)) } },
+                )
+            }
             when (method.type) {
-                MethodType.PILL -> PillPack(method, data.doses, data.settings.notifications, now, toggle)
+                MethodType.PILL -> PillPack(method, data.doses, data.settings.notifications, now, { date -> if (date in data.doses) confirmUndo = date else toggle(date) })
                 MethodType.PATCH, MethodType.RING -> MethodDays(method, data.doses, data.settings.notifications, now)
                 else -> if (today >= start) {
                     val index = method.dayIndex(today)!!

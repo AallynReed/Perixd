@@ -76,6 +76,9 @@
     <string name="mark_pill">Marcar comprimido %1$d como tomado</string>
     <string name="mark_pill_late">Marcar comprimido %1$d (%2$s) como tomado</string>
     <string name="mark_done">Marcar como feito: %1$s</string>
+    <string name="undo_dose_title">Marcar %1$s como não tomado?</string>
+    <string name="undo_dose_text">Volta para a embalagem e o lembrete regressa.</string>
+    <string name="not_taken">Não tomado</string>
     <string name="taken_at">Tomado às %1$s</string>
     <string name="done_at">Feito às %1$s</string>
     <string name="next_dose">A seguir: %1$s, %2$s</string>
