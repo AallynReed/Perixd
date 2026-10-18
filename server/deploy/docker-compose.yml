@@ -1,0 +1,17 @@
+# The official instance's stack, kept at /opt/perixd on Zakros.
+services:
+  server:
+    image: ghcr.io/aallynreed/perixd-server:latest
+    container_name: perixd
+    restart: unless-stopped
+    ports:
+      - "10.8.0.253:8480:8080"
+    volumes:
+      - ./data:/data
+      - ./secrets:/secrets:ro
+    environment:
+      PERIXD_FCM_SERVICE_ACCOUNT: /secrets/service-account.json
+      PERIXD_FCM_CLIENT: /secrets/google-services.json
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
