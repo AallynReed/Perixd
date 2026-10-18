@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apagar os seus dados do Perixd</title>
+<style>{{STYLE}}</style>
+</head>
+<body>
+<main>
+<p class="lang"><a href="/delete">English</a></p>
+<h1>Apagar os seus dados do Perixd</h1>
+<p>O Perixd não tem contas. O que regista fica nos seus dispositivos; o servidor de sincronização só guarda uma cópia
+encriptada se ativou a sincronização. Qualquer uma destas opções a apaga.</p>
+
+<h2>Na app</h2>
+<p>Abra <em>Definições &rsaquo; Parar de sincronizar neste dispositivo</em>, marque <em>Apagar também os dados
+sincronizados do servidor, para todos os dispositivos</em> e toque em <em>Parar</em>. O espaço de sincronização e
+todos os seus dados são apagados de imediato. Para limpar também um dispositivo, use <em>Definições &rsaquo; Eliminar
+todos os registos</em> ou desinstale o Perixd.</p>
+
+<h2>Com uma ligação de emparelhamento</h2>
+<p>Se guardou o código QR de emparelhamento, leia-o com qualquer leitor de QR para obter a ligação que começa por
+<code>perixd://pair</code> e cole-a aqui. A ligação fica neste navegador: só serve para assinar o pedido de
+apagamento.</p>
+<form id="form">
+<input id="link" type="text" placeholder="perixd://pair?u=...&amp;k=..." autocomplete="off" spellcheck="false">
+<button type="submit">Apagar dados sincronizados</button>
+</form>
+<p id="result" role="status"></p>
+
+<h2>Por email</h2>
+<p>Envie um email para <a href="{{CONTACT_HREF}}">{{CONTACT}}</a> com o seu ID de sincronização, que a app mostra em
+<em>Definições &rsaquo; Sincronizar entre dispositivos</em>, e o espaço será apagado no prazo de 30 dias. Sem o ID
+de sincronização ou a ligação de emparelhamento, os dados não podem ser associados a si e são apagados
+automaticamente ao fim de 12 meses sem utilização.</p>
+<p><a href="/privacy/pt">Política de privacidade</a></p>
+</main>
+<script>{{DELETE_SCRIPT}}</script>
+<script>
+perixdDelete({
+  working: "A apagar...",
+  done: "Apagado. O servidor já não guarda dados deste espaço.",
+  missing: "Não há nada para apagar: este espaço não existe no servidor.",
+  wrong: "Isto não é uma ligação de emparelhamento do Perixd.",
+  failed: "O servidor não aceitou o pedido. Tente novamente mais tarde.",
+});
+</script>
+</body>
+</html>

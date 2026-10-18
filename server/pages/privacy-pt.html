@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidade do Perixd</title>
+<style>{{STYLE}}</style>
+</head>
+<body>
+<main>
+<p class="lang"><a href="/privacy">English</a></p>
+<h1>Política de privacidade do Perixd</h1>
+<p class="meta">Em vigor desde 18 de outubro de 2026</p>
+
+<p>O Perixd é uma app Android para registar a menstruação, os sintomas e a contraceção, feita por Aallyn, um
+programador independente em Portugal. Esta política abrange a app Perixd e o servidor de sincronização em
+perixd.mildhope.net. O Perixd não tem contas, anúncios nem estatísticas de utilização, e nunca vende nem partilha os
+seus dados.</p>
+
+<h2>O que fica no seu dispositivo</h2>
+<p>Tudo o que regista fica apenas no armazenamento privado da app no seu dispositivo: os dias de sangramento e a sua
+intensidade, sintomas e a sua intensidade, notas, as tomas que marca como feitas e as definições (método
+contracetivo, início da embalagem ou ciclo, horas dos lembretes). Estes dados ficam fora das cópias de segurança do
+Android na nuvem. As previsões são calculadas no dispositivo. Desinstalar a app, ou usar <em>Definições &rsaquo;
+Eliminar todos os registos</em>, apaga-os.</p>
+
+<h2>Sincronização entre os seus dispositivos (opcional, desligada por omissão)</h2>
+<p>Se ativar a sincronização, os seus dispositivos trocam os registos e as definições através do servidor de
+sincronização. Cada registo é encriptado no seu dispositivo com AES-256-GCM antes de ser enviado, com uma chave
+derivada de um segredo que só existe nos seus dispositivos emparelhados e no código QR que lê para os emparelhar. O
+segredo nunca chega ao servidor.</p>
+<p><strong>O servidor não consegue ler</strong> os seus dados de saúde, datas, notas nem definições. <strong>O
+servidor vê</strong>: um identificador aleatório do espaço de sincronização; um hash do código que os seus
+dispositivos usam para lhe aceder; um identificador aleatório por dispositivo; para cada registo, um identificador
+opaco, a hora da última alteração e o tamanho dos dados encriptados; e, quando as notificações push estão ativas, um
+token do Firebase Cloud Messaging por dispositivo.</p>
+<p>As notificações push passam pelo Firebase Cloud Messaging da Google e contêm apenas um número de sequência que
+indica aos outros dispositivos que há dados novos. A Google trata o token do dispositivo e a informação de entrega
+segundo a sua própria política de privacidade.</p>
+
+<h2>Registos do servidor web</h2>
+<p>O proxy à frente do servidor regista o endereço IP, a hora e o endereço pedido de cada ligação, por segurança e
+para prevenir abusos. Estes registos são apagados ao fim de 14 dias.</p>
+
+<h2>Onde e durante quanto tempo os dados são guardados</h2>
+<p>O servidor de sincronização funciona em Portugal e o seu proxy na Alemanha, ambos na União Europeia. Os dados
+sincronizados ficam guardados até os apagar. Um espaço de sincronização que nenhum dispositivo use durante 12 meses é
+apagado automaticamente.</p>
+
+<h2>Apagar os seus dados</h2>
+<ul>
+<li>Na app: <em>Definições &rsaquo; Parar de sincronizar neste dispositivo</em>, com <em>Apagar também os dados
+sincronizados do servidor</em> marcado, remove o espaço e tudo o que contém, para todos os dispositivos.</li>
+<li>Sem a app: veja <a href="/delete/pt">perixd.mildhope.net/delete/pt</a>.</li>
+<li>No dispositivo: <em>Definições &rsaquo; Eliminar todos os registos</em>, ou desinstale o Perixd.</li>
+</ul>
+
+<h2>Fundamento jurídico e os seus direitos</h2>
+<p>Os dados sincronizados só são tratados porque escolhe ativar a sincronização, o que constitui o seu consentimento
+explícito nos termos dos artigos 6.º, n.º 1, alínea a), e 9.º, n.º 2, alínea a), do RGPD. Pode retirá-lo a qualquer
+momento parando a sincronização. Tem direito de acesso, retificação, apagamento, limitação, oposição e portabilidade.
+Como os dados sincronizados estão encriptados e não estão ligados à sua identidade, só conseguimos tratar um pedido
+que inclua o seu ID de sincronização, que a app mostra em <em>Definições &rsaquo; Sincronizar entre
+dispositivos</em>. Pode também apresentar reclamação à Comissão Nacional de Proteção de Dados
+(<a href="https://www.cnpd.pt">www.cnpd.pt</a>).</p>
+
+<h2>Saúde e menores</h2>
+<p>O Perixd mostra estimativas com base no que regista. Não é um dispositivo médico, não é aconselhamento médico e
+não é um método contracetivo. O Perixd destina-se a adultos e não é dirigido a crianças.</p>
+
+<h2>Alterações e contacto</h2>
+<p>As alterações a esta política serão publicadas nesta página com uma nova data de entrada em vigor. Dúvidas e
+pedidos: <a href="{{CONTACT_HREF}}">{{CONTACT}}</a>.</p>
+</main>
+</body>
+</html>

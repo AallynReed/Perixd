@@ -1,0 +1,2 @@
+ALTER TABLE spaces ADD COLUMN used INTEGER NOT NULL DEFAULT 0;
+UPDATE spaces SET used = created;

@@ -1,7 +1,7 @@
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use http_body_util::BodyExt;
-use perixd_server::{AppState, Config, FcmClient, app};
+use perixd_server::{AppState, Config, FcmClient, app, purge_idle};
 use serde_json::{Value, json};
 use tower::ServiceExt;
 
@@ -16,6 +16,7 @@ async fn state(dir: &tempfile::TempDir) -> AppState {
         max_records: 5,
         fcm_service_account: None,
         fcm_client: None,
+        contact: "privacy@example.net".into(),
     })
     .await
     .unwrap()
@@ -237,4 +238,59 @@ async fn config_reports_push_settings() {
         ),
         ("1:1234:android:abc", "k1", "1234")
     );
+}
+
+#[tokio::test]
+async fn pages_show_the_contact() {
+    let dir = tempfile::tempdir().unwrap();
+    let s = state(&dir).await;
+    for path in ["/", "/privacy", "/privacy/pt", "/delete", "/delete/pt"] {
+        let response = app(s.clone())
+            .oneshot(Request::get(path).body(Body::empty()).unwrap())
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::OK, "{path}");
+        let html = String::from_utf8(
+            response
+                .into_body()
+                .collect()
+                .await
+                .unwrap()
+                .to_bytes()
+                .to_vec(),
+        )
+        .unwrap();
+        assert!(!html.contains("{{"), "{path} has an unfilled placeholder");
+        if path != "/" {
+            assert!(html.contains("mailto:privacy@example.net"), "{path}");
+        }
+    }
+}
+
+#[tokio::test]
+async fn idle_spaces_are_purged() {
+    let dir = tempfile::tempdir().unwrap();
+    let s = state(&dir).await;
+    let path = format!("/v1/spaces/{SPACE}");
+    call(&s, "PUT", &path, Some(TOKEN), None).await;
+    call(
+        &s,
+        "POST",
+        &format!("{path}/records"),
+        Some(TOKEN),
+        Some(json!({ "device": "phone-0001", "records": [record("record-id-aaaaaaaa", 1, "x")] })),
+    )
+    .await;
+    assert_eq!(purge_idle(&s.db).await.unwrap(), 0);
+    sqlx::query("UPDATE spaces SET used = ?")
+        .bind(perixd_server::now() - perixd_server::MAX_IDLE_MS - 1)
+        .execute(&s.db)
+        .await
+        .unwrap();
+    assert_eq!(purge_idle(&s.db).await.unwrap(), 1);
+    let left: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM records")
+        .fetch_one(&s.db)
+        .await
+        .unwrap();
+    assert_eq!(left, 0);
 }

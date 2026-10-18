@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your Perixd data</title>
+<style>{{STYLE}}</style>
+</head>
+<body>
+<main>
+<p class="lang"><a href="/delete/pt">Português</a></p>
+<h1>Delete your Perixd data</h1>
+<p>Perixd has no accounts. What you log stays on your devices; the sync server only holds an encrypted copy if you
+turned on sync. Any of these deletes it.</p>
+
+<h2>In the app</h2>
+<p>Open <em>Settings &rsaquo; Stop syncing on this device</em>, tick <em>Also delete the synced data from the server
+for every device</em>, and tap <em>Stop</em>. The sync space and all its data are deleted at once. To also clear a
+device, use <em>Settings &rsaquo; Delete all logs</em> or uninstall Perixd.</p>
+
+<h2>With a pairing link</h2>
+<p>If you saved your pairing QR code, scan it with any QR reader to get the link that starts with
+<code>perixd://pair</code>, and paste it here. The link stays in this browser: it is only used to sign the deletion
+request.</p>
+<form id="form">
+<input id="link" type="text" placeholder="perixd://pair?u=...&amp;k=..." autocomplete="off" spellcheck="false">
+<button type="submit">Delete synced data</button>
+</form>
+<p id="result" role="status"></p>
+
+<h2>By email</h2>
+<p>Email <a href="{{CONTACT_HREF}}">{{CONTACT}}</a> with your Sync ID, shown in the app under <em>Settings &rsaquo;
+Sync between devices</em>, and the space will be deleted within 30 days. Without a Sync ID or pairing link the data
+cannot be linked to you, and it is deleted automatically after 12 months without use.</p>
+<p><a href="/privacy">Privacy policy</a></p>
+</main>
+<script>{{DELETE_SCRIPT}}</script>
+<script>
+perixdDelete({
+  working: "Deleting...",
+  done: "Deleted. The server no longer holds any data for this space.",
+  missing: "There is nothing to delete: this space doesn't exist on the server.",
+  wrong: "That isn't a Perixd pairing link.",
+  failed: "The server didn't accept the request. Please try again later.",
+});
+</script>
+</body>
+</html>

@@ -1,7 +1,9 @@
+pub mod pages;
 pub mod push;
 
 use axum::extract::{DefaultBodyLimit, Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
+use axum::response::Html;
 use axum::routing::{get, put};
 use axum::{Json, Router};
 use serde::{Deserialize, Serialize};
@@ -17,6 +19,8 @@ use std::time::{SystemTime, UNIX_EPOCH};
 pub const PACKAGE: &str = "net.mildhope.perixd";
 const PAGE: i64 = 500;
 const MAX_BLOB: usize = 64 * 1024;
+/// A space no device has used for this long is deleted.
+pub const MAX_IDLE_MS: i64 = 365 * 24 * 60 * 60 * 1000;
 
 pub struct Config {
     pub bind: String,
@@ -27,6 +31,8 @@ pub struct Config {
     pub fcm_service_account: Option<PathBuf>,
     /// Path to the google-services.json whose client settings the app uses for push.
     pub fcm_client: Option<PathBuf>,
+    /// Email address or URL shown on the privacy and deletion pages.
+    pub contact: String,
 }
 
 impl Config {
@@ -43,6 +49,8 @@ impl Config {
                 .unwrap_or(20_000),
             fcm_service_account: var("PERIXD_FCM_SERVICE_ACCOUNT").map(Into::into),
             fcm_client: var("PERIXD_FCM_CLIENT").map(Into::into),
+            contact: var("PERIXD_CONTACT")
+                .unwrap_or_else(|| "https://github.com/AallynReed/Perixd/issues".into()),
         }
     }
 }
@@ -138,6 +146,11 @@ fn read(path: &PathBuf) -> Result<String, String> {
 
 pub fn app(state: AppState) -> Router {
     Router::new()
+        .route("/", get(|s| page(s, pages::INDEX)))
+        .route("/privacy", get(|s| page(s, pages::PRIVACY_EN)))
+        .route("/privacy/pt", get(|s| page(s, pages::PRIVACY_PT)))
+        .route("/delete", get(|s| page(s, pages::DELETE_EN)))
+        .route("/delete/pt", get(|s| page(s, pages::DELETE_PT)))
         .route("/v1/config", get(config))
         .route("/v1/spaces/{space}", put(open_space).delete(delete_space))
         .route("/v1/spaces/{space}/records", get(pull).post(push_records))
@@ -147,6 +160,10 @@ pub fn app(state: AppState) -> Router {
         )
         .layer(DefaultBodyLimit::max(4 * 1024 * 1024))
         .with_state(state)
+}
+
+async fn page(State(state): State<AppState>, template: &'static str) -> Html<String> {
+    pages::render(template, &state.config.contact)
 }
 
 type ApiResult<T> = Result<T, (StatusCode, &'static str)>;
@@ -196,7 +213,15 @@ async fn authorize(state: &AppState, space: &str, headers: &HeaderMap) -> ApiRes
         .map_err(internal)?;
     match stored {
         None => Err((StatusCode::NOT_FOUND, "no such space")),
-        Some(h) if h == hash(token) => Ok(()),
+        Some(h) if h == hash(token) => {
+            sqlx::query("UPDATE spaces SET used = ? WHERE id = ?")
+                .bind(now())
+                .bind(space)
+                .execute(&state.db)
+                .await
+                .map_err(internal)?;
+            Ok(())
+        }
         Some(_) => Err((StatusCode::FORBIDDEN, "wrong token")),
     }
 }
@@ -225,9 +250,10 @@ async fn open_space(
     if count >= state.config.max_spaces {
         return Err((StatusCode::INSUFFICIENT_STORAGE, "this server is full"));
     }
-    sqlx::query("INSERT INTO spaces (id, auth_hash, created) VALUES (?, ?, ?)")
+    sqlx::query("INSERT INTO spaces (id, auth_hash, created, used) VALUES (?, ?, ?, ?)")
         .bind(&space)
         .bind(hash(token))
+        .bind(now())
         .bind(now())
         .execute(&state.db)
         .await
@@ -410,4 +436,13 @@ async fn remove_device(
         .await
         .map_err(internal)?;
     Ok(StatusCode::NO_CONTENT)
+}
+
+/// Deletes spaces no device has used for [MAX_IDLE_MS], with everything in them.
+pub async fn purge_idle(db: &SqlitePool) -> Result<u64, sqlx::Error> {
+    Ok(sqlx::query("DELETE FROM spaces WHERE used < ?")
+        .bind(now() - MAX_IDLE_MS)
+        .execute(db)
+        .await?
+        .rows_affected())
 }

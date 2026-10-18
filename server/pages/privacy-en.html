@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perixd privacy policy</title>
+<style>{{STYLE}}</style>
+</head>
+<body>
+<main>
+<p class="lang"><a href="/privacy/pt">Português</a></p>
+<h1>Perixd privacy policy</h1>
+<p class="meta">Effective October 18, 2026</p>
+
+<p>Perixd is a period, symptom and contraception tracker for Android, made by Aallyn, an independent developer in
+Portugal. This policy covers the Perixd app and the Perixd sync server at perixd.mildhope.net. Perixd has no
+accounts, no ads and no analytics, and never sells or shares your data.</p>
+
+<h2>What stays on your device</h2>
+<p>Everything you enter is stored only in the app's private storage on your device: the days you bleed and how
+heavily, symptoms and their intensity, notes, the doses you mark as taken, and your settings (contraceptive method,
+pack or cycle start, reminder times). It is excluded from Android cloud backups. Predictions are calculated on the
+device. Uninstalling the app, or using <em>Settings &rsaquo; Delete all logs</em>, removes it.</p>
+
+<h2>Sync between your devices (optional, off by default)</h2>
+<p>If you turn on sync, your devices exchange your logs and settings through the sync server. Each record is
+encrypted on your device with AES-256-GCM before it is sent, using a key derived from a secret that exists only on
+your paired devices and in the QR code you scan to pair them. The secret never reaches the server.</p>
+<p><strong>The server cannot read</strong> your health data, dates, notes or settings. <strong>The server can
+see</strong>: a random sync space ID; a hash of the token your devices use to access it; a random ID per device;
+for each record an opaque ID, the time it last changed and the size of the encrypted data; and, when push is
+enabled, a Firebase Cloud Messaging token for each device.</p>
+<p>Push messages go through Google's Firebase Cloud Messaging and contain only a sequence number that tells your
+other devices to fetch new data. Google processes the device token and delivery information under its own privacy
+policy.</p>
+
+<h2>Web server logs</h2>
+<p>The reverse proxy in front of the server records the IP address, time and requested address of each connection
+for security and abuse prevention. These logs are deleted after 14 days.</p>
+
+<h2>Where data is kept, and for how long</h2>
+<p>The sync server runs in Portugal and its reverse proxy in Germany, both in the European Union. Synced data stays
+until you delete it. A sync space that no device has used for 12 months is deleted automatically.</p>
+
+<h2>Deleting your data</h2>
+<ul>
+<li>In the app: <em>Settings &rsaquo; Stop syncing on this device</em>, ticking <em>Also delete the synced data
+from the server</em>, removes the space and everything in it for every device.</li>
+<li>Without the app: see <a href="/delete">perixd.mildhope.net/delete</a>.</li>
+<li>On the device: <em>Settings &rsaquo; Delete all logs</em>, or uninstall Perixd.</li>
+</ul>
+
+<h2>Legal basis and your rights</h2>
+<p>Synced data is processed only because you choose to turn on sync, which is your explicit consent under Articles
+6(1)(a) and 9(2)(a) of the GDPR. You can withdraw it at any time by stopping sync. You have the right to access,
+correct, delete, restrict, object to and port your data. Because synced data is encrypted and not linked to your
+identity, we can only act on a request that includes your Sync ID, shown in the app under <em>Settings &rsaquo; Sync
+between devices</em>. You may also complain to the Portuguese data protection authority, CNPD
+(<a href="https://www.cnpd.pt">www.cnpd.pt</a>).</p>
+
+<h2>Health and children</h2>
+<p>Perixd shows estimates based on what you log. It is not a medical device, it is not medical advice, and it is not
+a method of contraception. Perixd is intended for adults and is not directed at children.</p>
+
+<h2>Changes and contact</h2>
+<p>Changes to this policy will be posted on this page with a new effective date. Questions and requests:
+<a href="{{CONTACT_HREF}}">{{CONTACT}}</a>.</p>
+</main>
+</body>
+</html>
