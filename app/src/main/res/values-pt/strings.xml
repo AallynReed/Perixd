@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="today">Hoje</string>
+    <string name="calendar">Calendário</string>
+    <string name="insights">Resumo</string>
+    <string name="settings">Definições</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="allow">Permitir</string>
+    <string name="off">Desligado</string>
+    <string name="undo">Anular</string>
+    <string name="done">Feito</string>
+    <string name="taken">Tomado</string>
+    <string name="not_set">Não definido</string>
+    <string name="increase">Aumentar</string>
+    <string name="decrease">Diminuir</string>
+    <string name="current">Atual</string>
+    <string name="approx">~%1$s</string>
+    <string name="date_range">%1$s – %2$s</string>
+    <string name="day_n">Dia %1$d</string>
+    <string name="of_about">de ~%1$d</string>
+    <string name="of_total">de %1$d</string>
+
+    <string name="channel_dose">Lembretes da toma</string>
+    <string name="channel_cycle">Avisos do ciclo</string>
+    <string name="channel_log">Lembrete do registo diário</string>
+    <string name="public_text">Tem um lembrete</string>
+
+    <string name="disclaimer">O Perixd mostra estimativas com base no que regista. Não é aconselhamento médico nem um método contracetivo.</string>
+    <string name="estimate_only">Apenas uma estimativa, não serve como contraceção.</string>
+
+    <string name="welcome_title">Comece pela última menstruação</string>
+    <string name="welcome_text">Registe os dias em que teve sangramento e o Perixd prevê a próxima menstruação, a janela fértil e a ovulação. Quantos mais ciclos registar, melhores ficam as estimativas.</string>
+    <string name="log_today">Registar hoje</string>
+    <string name="open_calendar">Abrir calendário</string>
+    <string name="open_settings">Abrir definições</string>
+    <string name="setup_method_text">Indique em que ponto está da embalagem ou do ciclo atual para o ver aqui e receber lembretes.</string>
+    <string name="notifications_off">As notificações estão desligadas, por isso os lembretes não lhe chegam.</string>
+
+    <string name="period_day">Menstruação, dia %1$d</string>
+    <string name="period_today">Menstruação prevista para hoje</string>
+    <string name="period_in_range">Menstruação dentro de %1$d a %2$d dias</string>
+    <string name="expected_on">Prevista: %1$s</string>
+    <string name="next_expected">A próxima está prevista: %1$s</string>
+    <string name="fertile_window">Janela fértil</string>
+    <string name="fertile_now">Está nela hoje</string>
+    <string name="ovulation">Ovulação</string>
+    <string name="bleeding_today">Sangramento registado hoje</string>
+    <string name="bleed_expected">Sangramento previsto por volta de %1$s</string>
+    <string name="last_bleed">Último sangramento começou a %1$s</string>
+    <string name="fertility_hidden">As estimativas de ovulação e janela fértil ficam ocultas enquanto usa um método hormonal, porque não se aplicam.</string>
+    <string name="no_bleed_prediction">Com este método o sangramento é muitas vezes irregular, por isso o Perixd não o prevê. As estimativas de ovulação e janela fértil ficam ocultas.</string>
+    <string name="new_pack_on">Nova embalagem a %1$s</string>
+    <string name="new_patch_on">Novo adesivo a %1$s</string>
+    <string name="new_ring_on">Novo anel a %1$s</string>
+    <string name="break_starts">A pausa começa a %1$s</string>
+    <string name="placebo_starts">Os comprimidos placebo começam a %1$s</string>
+    <string name="patch_free_starts">A semana sem adesivo começa a %1$s</string>
+    <string name="ring_free_starts">A semana sem anel começa a %1$s</string>
+
+    <string name="pos_pill">Comprimido %1$d de %2$d</string>
+    <string name="pos_placebo">Placebo %1$d de %2$d</string>
+    <string name="pos_break">Pausa, dia %1$d de %2$d</string>
+    <string name="pos_patch">Adesivo, semana %1$d</string>
+    <string name="pos_patch_free">Sem adesivo, dia %1$d de %2$d</string>
+    <string name="pos_ring">Anel, dia %1$d de %2$d</string>
+    <string name="pos_ring_free">Sem anel, dia %1$d de %2$d</string>
+    <string name="pos_day">Dia %1$d de %2$d</string>
+
+    <string name="pill_taken">tomado</string>
+    <string name="pill_missed">já devia ter saído, não marcado como tomado</string>
+    <string name="pill_in_pack">ainda na embalagem</string>
+    <string name="break_days">Pausa</string>
+    <string name="mark_pill">Marcar comprimido %1$d como tomado</string>
+    <string name="mark_pill_late">Marcar comprimido %1$d (%2$s) como tomado</string>
+    <string name="mark_done">Marcar como feito: %1$s</string>
+    <string name="taken_at">Tomado às %1$s</string>
+    <string name="done_at">Feito às %1$s</string>
+    <string name="next_dose">A seguir: %1$s, %2$s</string>
+
+    <string name="dose_pill">Hora do comprimido %1$d de %2$d</string>
+    <string name="dose_placebo">Hora do comprimido placebo %1$d de %2$d</string>
+    <string name="dose_patch_apply">Hora de colocar um adesivo novo</string>
+    <string name="dose_patch_change">Hora de trocar o adesivo (%1$d de %2$d)</string>
+    <string name="dose_patch_remove">Hora de retirar o adesivo</string>
+    <string name="dose_ring_insert">Hora de colocar um anel novo</string>
+    <string name="dose_ring_remove">Hora de retirar o anel</string>
+    <string name="dose_ring_change">Hora de trocar o anel</string>
+    <string name="dose_injection">A sua injeção está marcada para hoje</string>
+    <string name="dose_hint_pill">Toque em Tomado depois de o tomar.</string>
+    <string name="dose_hint_other">Toque em Feito quando estiver feito.</string>
+    <string name="dose_overdue">Era para %1$s e ainda não está marcado.</string>
+    <string name="snooze_action">Adiar %1$d min</string>
+
+    <string name="noun_pill">Comprimido</string>
+    <string name="noun_patch_apply">Adesivo novo</string>
+    <string name="noun_patch_change">Troca do adesivo</string>
+    <string name="noun_patch_remove">Retirar o adesivo</string>
+    <string name="noun_ring_insert">Anel novo</string>
+    <string name="noun_ring_remove">Retirar o anel</string>
+    <string name="noun_ring_change">Troca do anel</string>
+    <string name="noun_injection">Injeção</string>
+    <string name="new_pack_soon">A nova embalagem começa amanhã</string>
+    <string name="on_day_at">%1$s às %2$s</string>
+    <string name="around_day">Por volta de %1$s</string>
+    <string name="fertile_today">A janela fértil começa hoje</string>
+    <string name="log_reminder_title">Como se sente hoje?</string>
+    <string name="log_reminder_text">Registe o fluxo e os sintomas.</string>
+
+    <string name="how_today">Como se sente hoje?</string>
+    <string name="flow">Fluxo</string>
+    <string name="flow_none">Nenhum</string>
+    <string name="flow_spotting">Spotting</string>
+    <string name="flow_light">Ligeiro</string>
+    <string name="flow_medium">Moderado</string>
+    <string name="flow_heavy">Abundante</string>
+    <string name="symptoms">Sintomas</string>
+    <string name="symptom_cramps">Cólicas</string>
+    <string name="symptom_headache">Dor de cabeça</string>
+    <string name="symptom_back_pain">Dor nas costas</string>
+    <string name="symptom_bloating">Inchaço</string>
+    <string name="symptom_breast_tenderness">Peito sensível</string>
+    <string name="symptom_fatigue">Cansaço</string>
+    <string name="symptom_nausea">Náuseas</string>
+    <string name="symptom_acne">Acne</string>
+    <string name="symptom_mood">Alterações de humor</string>
+    <string name="intensity_none">Nenhuma</string>
+    <string name="intensity_mild">Ligeira</string>
+    <string name="intensity_moderate">Moderada</string>
+    <string name="intensity_severe">Forte</string>
+    <string name="note">Nota</string>
+    <string name="log_symptoms">Sintomas e notas</string>
+    <string name="edit_log">Editar o registo de hoje</string>
+
+    <string name="previous_month">Mês anterior</string>
+    <string name="next_month">Mês seguinte</string>
+    <string name="back_to_today">Voltar a hoje</string>
+    <string name="legend_period">Menstruação</string>
+    <string name="legend_predicted">Prevista</string>
+    <string name="legend_fertile">Janela fértil</string>
+    <string name="legend_ovulation">Ovulação</string>
+    <string name="legend_spotting">Spotting</string>
+    <string name="legend_symptoms">Sintomas ou nota</string>
+    <string name="legend_dose_done">Toma feita</string>
+    <string name="legend_dose_missed">Toma não marcada</string>
+    <string name="calendar_hint">Toque num dia para registar fluxo, sintomas e tomas. Deslize para o lado para mudar de mês.</string>
+
+    <string name="your_cycle">O seu ciclo</string>
+    <string name="average_cycle">Ciclo médio</string>
+    <string name="average_period">Menstruação média</string>
+    <string name="range_days">%1$d a %2$d dias</string>
+    <string name="regularity">Regularidade</string>
+    <string name="very_regular">Muito regular</string>
+    <string name="regular">Regular</string>
+    <string name="irregular">Irregular</string>
+    <string name="varies_by">Varia %1$d dias</string>
+    <string name="cycles_logged">Ciclos contados</string>
+    <string name="recent_six">Até aos últimos 6</string>
+    <string name="cycle_day">Dia do ciclo</string>
+    <string name="next_period">Próxima menstruação</string>
+    <string name="more_cycles_needed">Registe pelo menos três ciclos para ter médias fiáveis. Até lá, o Perixd usa as durações habituais das Definições.</string>
+    <string name="doses_last_30">Últimos 30 dias</string>
+    <string name="doses_marked">%1$d de %2$d tomas marcadas</string>
+    <string name="flow_by_day">Fluxo por dia da menstruação</string>
+    <string name="flow_scale">Fluxo médio em cada dia das últimas menstruações, de spotting a abundante.</string>
+    <string name="symptoms_180">Sintomas, últimos 6 meses</string>
+    <string name="no_symptoms">Ainda não há sintomas registados.</string>
+    <string name="symptom_detail">%1$s, normalmente no dia %2$s do ciclo</string>
+    <string name="cycle_history">Histórico de ciclos</string>
+
+    <string name="section_method">Contraceção</string>
+    <string name="method">Método</string>
+    <string name="method_none">Nenhum ou não hormonal</string>
+    <string name="method_none_hint">Preservativo, métodos naturais ou nenhum. As estimativas de fertilidade são mostradas.</string>
+    <string name="method_pill">Pílula</string>
+    <string name="method_pill_hint">Combinada ou só com progestagénio, qualquer embalagem.</string>
+    <string name="method_patch">Adesivo</string>
+    <string name="method_patch_hint">Um adesivo novo por semana.</string>
+    <string name="method_ring">Anel vaginal</string>
+    <string name="method_ring_hint">Três semanas com anel e uma sem, ou uso contínuo.</string>
+    <string name="method_injection">Injeção</string>
+    <string name="method_injection_hint">De poucas em poucas semanas, por exemplo a cada 12 ou 13 semanas.</string>
+    <string name="method_long_acting">DIU ou implante</string>
+    <string name="method_long_acting_hint">Sem lembretes. Indique se é hormonal.</string>
+    <string name="pack_type">Embalagem</string>
+    <string name="pack_21_7">21 comprimidos, 7 dias de pausa</string>
+    <string name="pack_24_4">24 comprimidos, 4 dias de pausa</string>
+    <string name="pack_21_7p">21 comprimidos + 7 placebo</string>
+    <string name="pack_24_4p">24 comprimidos + 4 placebo</string>
+    <string name="pack_28">28 comprimidos ativos, sem pausa</string>
+    <string name="pack_custom">Personalizada: %1$d + %2$d placebo + %3$d de pausa</string>
+    <string name="active_pills">Comprimidos ativos</string>
+    <string name="placebo_pills">Comprimidos placebo</string>
+    <string name="break_length">Dias de pausa</string>
+    <string name="break_length_hint">Dias sem comprimidos; os lembretes param.</string>
+    <string name="hormone_free_week">Semana sem hormonas</string>
+    <string name="hormone_free_week_hint">Desligue para uso contínuo.</string>
+    <string name="injection_interval">A cada</string>
+    <string name="hormonal_method">Hormonal</string>
+    <string name="hormonal_method_hint">Ligado para DIU hormonal ou implante, desligado para DIU de cobre. As estimativas de fertilidade só aparecem quando está desligado.</string>
+    <string name="today_is">Hoje é o dia</string>
+    <string name="today_is_hint">Indique em que ponto está da embalagem ou do ciclo atual.</string>
+    <string name="cycle_started">Início da embalagem ou ciclo atual</string>
+
+    <string name="section_reminders">Lembretes</string>
+    <string name="dose_reminders">Lembretes da toma</string>
+    <string name="reminder_time">Hora do lembrete</string>
+    <string name="weekend_time_switch">Hora diferente ao fim de semana</string>
+    <string name="weekend_time">Hora do lembrete ao fim de semana</string>
+    <string name="keep_until_done">Manter até marcar como feito</string>
+    <string name="keep_until_done_hint">O lembrete fica nas notificações. No Android 14 e posteriores pode ser deslizado para o lado, por isso o Perixd volta a mostrá-lo de imediato até marcar a toma.</string>
+    <string name="repeat_alert">Voltar a alertar</string>
+    <string name="repeat_alert_hint">Repete o som do lembrete até a toma ser marcada.</string>
+    <string name="snooze_button">Botão adiar</string>
+    <string name="no_snooze">Sem adiar</string>
+    <string name="new_pack_notice">Aviso de nova embalagem</string>
+    <string name="new_pack_notice_hint">Um aviso na véspera de começar a próxima embalagem.</string>
+    <string name="advance_notice">Dias de antecedência</string>
+    <string name="advance_notice_hint">Um aviso antes de cada troca ou injeção.</string>
+
+    <string name="section_cycle_notices">Notificações do ciclo</string>
+    <string name="period_notice">Menstruação a chegar</string>
+    <string name="bleed_notice">Sangramento a chegar</string>
+    <string name="fertile_notice">Início da janela fértil</string>
+    <string name="notice_time">Hora destes avisos</string>
+    <string name="notice_time_hint">Também usada nos avisos antecipados e de nova embalagem.</string>
+    <string name="daily_log">Lembrete do registo diário</string>
+    <string name="daily_log_hint">Só quando o dia ainda não tem nada registado.</string>
+    <string name="daily_log_time">Hora do registo diário</string>
+
+    <string name="section_notification_behavior">Comportamento das notificações</string>
+    <string name="hide_on_lock_screen">Ocultar detalhes no ecrã de bloqueio</string>
+    <string name="hide_on_lock_screen_hint">Mostra apenas \"Tem um lembrete\" até desbloquear.</string>
+    <string name="sound_vibration">Som, vibração e pop-up</string>
+    <string name="sound_vibration_hint">Abre as definições do Android para os lembretes da toma.</string>
+    <string name="all_notification_settings">Todas as definições de notificações</string>
+    <string name="exact_alarms_off">Os alarmes exatos não estão permitidos, por isso os lembretes podem atrasar.</string>
+    <string name="reliability_note">Os lembretes usam alarmes exatos e são reagendados depois de reiniciar, atualizar a app ou mudar a hora ou o fuso horário. Mesmo assim podem não aparecer se as notificações estiverem bloqueadas, se a app for forçada a parar ou se uma poupança de bateria a fechar.</string>
+
+    <string name="section_cycle">Ciclo</string>
+    <string name="usual_cycle">Duração habitual do ciclo</string>
+    <string name="usual_hint">Usada até registar alguns ciclos.</string>
+    <string name="usual_period">Duração habitual da menstruação</string>
+    <string name="luteal_phase">Dias da ovulação à menstruação</string>
+    <string name="luteal_phase_hint">Normalmente 14. Só altere se souber o seu valor.</string>
+
+    <string name="section_appearance">Aspeto</string>
+    <string name="theme">Tema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Escuro</string>
+    <string name="theme_system">Igual ao sistema</string>
+    <string name="language">Idioma</string>
+
+    <string name="section_privacy">Privacidade</string>
+    <string name="privacy_text">Tudo o que regista fica neste dispositivo. O Perixd não tem acesso à internet, anúncios nem estatísticas de utilização, e os dados ficam fora das cópias de segurança na nuvem.</string>
+    <string name="delete_logs">Eliminar todos os registos</string>
+    <string name="delete_logs_hint">Remove todos os dias e tomas registados. As definições mantêm-se.</string>
+    <string name="delete_logs_confirm">Isto remove deste dispositivo todos os dias, sintomas e tomas registados. Não é possível anular.</string>
+    <string name="about">Perixd %1$s, software livre sob a GNU AGPL 3.0.</string>
+
+    <plurals name="days">
+        <item quantity="one">%1$d dia</item>
+        <item quantity="many">%1$d dias</item>
+        <item quantity="other">%1$d dias</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="one">%1$d semana</item>
+        <item quantity="many">%1$d semanas</item>
+        <item quantity="other">%1$d semanas</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%1$d minuto</item>
+        <item quantity="many">%1$d minutos</item>
+        <item quantity="other">%1$d minutos</item>
+    </plurals>
+    <plurals name="every_minutes">
+        <item quantity="one">A cada minuto</item>
+        <item quantity="many">A cada %1$d minutos</item>
+        <item quantity="other">A cada %1$d minutos</item>
+    </plurals>
+    <plurals name="every_hours">
+        <item quantity="one">A cada hora</item>
+        <item quantity="many">A cada %1$d horas</item>
+        <item quantity="other">A cada %1$d horas</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="one">%1$d dia antes</item>
+        <item quantity="many">%1$d dias antes</item>
+        <item quantity="other">%1$d dias antes</item>
+    </plurals>
+    <plurals name="period_in">
+        <item quantity="one">Menstruação dentro de %1$d dia</item>
+        <item quantity="many">Menstruação dentro de %1$d dias</item>
+        <item quantity="other">Menstruação dentro de %1$d dias</item>
+    </plurals>
+    <plurals name="period_late">
+        <item quantity="one">Menstruação atrasada %1$d dia</item>
+        <item quantity="many">Menstruação atrasada %1$d dias</item>
+        <item quantity="other">Menstruação atrasada %1$d dias</item>
+    </plurals>
+    <plurals name="period_soon">
+        <item quantity="one">Menstruação prevista dentro de %1$d dia</item>
+        <item quantity="many">Menstruação prevista dentro de %1$d dias</item>
+        <item quantity="other">Menstruação prevista dentro de %1$d dias</item>
+    </plurals>
+    <plurals name="bleed_soon">
+        <item quantity="one">Sangramento previsto dentro de %1$d dia</item>
+        <item quantity="many">Sangramento previsto dentro de %1$d dias</item>
+        <item quantity="other">Sangramento previsto dentro de %1$d dias</item>
+    </plurals>
+    <plurals name="dose_soon">
+        <item quantity="one">%1$s dentro de %2$d dia</item>
+        <item quantity="many">%1$s dentro de %2$d dias</item>
+        <item quantity="other">%1$s dentro de %2$d dias</item>
+    </plurals>
+</resources>
