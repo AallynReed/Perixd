@@ -10,14 +10,23 @@ A private period, symptom and contraception tracker for Android.
 - Ovulation and fertile-window estimates are hidden while a hormonal method is in use. None of the estimates are contraception advice.
 - English and European Portuguese, light and dark themes.
 
-Everything stays on the device: the app has no internet permission and its data is excluded from backups.
+Everything stays on the device unless you turn on sync, and the data is excluded from cloud backups. There are no ads,
+analytics or accounts.
+
+## Sync between devices (optional)
+
+Pair a phone and a tablet by scanning a QR code, and logs, doses and settings (all but the theme) follow you between
+them. Data is encrypted on the device with AES-256-GCM under a key only the paired devices hold, so the
+[sync server](server/README.md) stores nothing it can read. With Firebase push set up on the server, marking a pill on
+one device clears the reminder on the others within seconds; without it they catch up within a few minutes while a
+reminder is showing.
 
 ## Build
 
 Requires JDK 17 and the Android SDK.
 
 ```powershell
-$env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
+$env:ANDROID_HOME = "C:\path\to\Android\Sdk"
 .\gradlew.bat :app:testDebugUnitTest :app:assembleDebug
 ```
 
