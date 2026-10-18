@@ -79,6 +79,8 @@ data class Data(
     /** Scheduled dose day to the time it was marked done, in epoch milliseconds. */
     val doses: Map<LocalDate, Long> = emptyMap(),
     val settings: Settings = Settings(),
+    /** When each sync record last changed, in epoch milliseconds; see [net.mildhope.perixd.sync.Records]. */
+    val stamps: Map<String, Long> = emptyMap(),
 )
 
 object LocalDateSerializer : KSerializer<LocalDate> {

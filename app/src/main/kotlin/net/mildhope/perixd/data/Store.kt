@@ -3,6 +3,7 @@ package net.mildhope.perixd.data
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.serialization.json.Json
+import net.mildhope.perixd.sync.Records
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
@@ -13,17 +14,24 @@ class Store(private val file: File) {
     private val state = MutableStateFlow(load())
     val data: StateFlow<Data> = state
     var onChange: (Data) -> Unit = {}
+    var onLocalChange: () -> Unit = {}
 
-    fun update(change: (Data) -> Data) {
+    /** Applies a change and stamps the records it touched, unless they come from sync and carry their own stamps. */
+    fun update(stamp: Boolean = true, change: (Data) -> Data) {
         val new = synchronized(this) {
             val old = state.value
-            val new = change(old)
+            var new = change(old)
             if (new == old) return
+            if (stamp) {
+                val now = System.currentTimeMillis()
+                new = new.copy(stamps = new.stamps + Records.changedKeys(old, new).associateWith { now })
+            }
             write(new)
             state.value = new
             new
         }
         onChange(new)
+        if (stamp) onLocalChange()
     }
 
     private fun load(): Data {

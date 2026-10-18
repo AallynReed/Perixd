@@ -55,6 +55,10 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icons)
     implementation(libs.kotlinx.serialization.json)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
+    implementation(libs.zxing.core)
+    implementation(libs.code.scanner)
 
     testImplementation(libs.junit)
 }

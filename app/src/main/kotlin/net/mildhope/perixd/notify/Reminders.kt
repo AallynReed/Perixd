@@ -31,6 +31,7 @@ import net.mildhope.perixd.domain.doseMoment
 import net.mildhope.perixd.domain.isHormonal
 import net.mildhope.perixd.domain.plan
 import net.mildhope.perixd.store
+import net.mildhope.perixd.sync.Sync
 import net.mildhope.perixd.ui.Labels
 import java.time.Instant
 import java.time.LocalDate
@@ -78,7 +79,8 @@ object Reminders {
             DoseAction.KEEP -> Unit
         }
         for (notice in plan.notices) noticeNotification(context, data, notice, now)?.let { (id, n) -> post(context, id, n) }
-        schedule(context, plan.nextWake)
+        val poll = now.plusMinutes(3).takeIf { Sync.enabled && plan.dose != null && plan.doseAction != DoseAction.CANCEL }
+        schedule(context, listOfNotNull(plan.nextWake, poll).minOrNull())
     }
 
     fun markDone(context: Context, day: LocalDate) {
@@ -210,6 +212,14 @@ class ReminderReceiver : BroadcastReceiver() {
         when (intent.action) {
             ACTION_DONE -> day?.let { Reminders.markDone(context, it) }
             ACTION_SNOOZE -> day?.let { Reminders.snooze(context, it) }
+            ACTION_WAKE if Sync.enabled -> {
+                val pending = goAsync()
+                Thread {
+                    Sync.syncNow(context, 6_000)
+                    Reminders.sync(context)
+                    pending.finish()
+                }.start()
+            }
             else -> Reminders.sync(context)
         }
     }
