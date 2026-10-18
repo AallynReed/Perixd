@@ -80,4 +80,4 @@ Security practices: data encrypted in transit **Yes**; users can request deletio
 ## Store settings
 
 - App category: **Health & Fitness**.
-- Contact email: the address confirmed for the privacy policy. Website: `https://github.com/AallynReed/Perixd`.
+- Contact email: `perixd@mildhope.net` (the same address the privacy policy shows). Website: `https://github.com/AallynReed/Perixd`.

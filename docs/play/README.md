@@ -14,8 +14,9 @@ apply for production.
 ## Before opening Play Console
 
 - [ ] Back up `perixd-release.jks` and `keystore.properties` somewhere safe (see [signing.md](signing.md)).
-- [ ] The privacy policy and deletion pages are live at `https://perixd.mildhope.net/privacy` and
-      `https://perixd.mildhope.net/delete`, with the confirmed contact email set as `PERIXD_CONTACT` on the server.
+- [x] The privacy policy and deletion pages are live at `https://perixd.mildhope.net/privacy` and
+      `https://perixd.mildhope.net/delete`, showing `perixd@mildhope.net` (`PERIXD_CONTACT` on the server).
+- [ ] Create the `perixd@mildhope.net` mailbox (or an alias to an existing one) so mail to it doesn't bounce.
 
 ## 1. Create the app
 
@@ -48,7 +49,7 @@ Fill each form from [app-content.md](app-content.md):
 
 ## 4. Store presence
 
-- [ ] Store settings: category **Health & Fitness**, contact email, website `https://github.com/AallynReed/Perixd`.
+- [ ] Store settings: category **Health & Fitness**, contact email `perixd@mildhope.net`, website `https://github.com/AallynReed/Perixd`.
 - [ ] Main store listing (en-US): text from [listing-en-US.md](listing-en-US.md); icon `graphics/icon-512.png`;
       feature graphic `graphics/feature-en-US.png`; phone screenshots `graphics/screenshots/en-US/1-today.png` to
       `6-reminder.png`, in that order.
