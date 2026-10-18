@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Perixd</string>
+
+    <string name="today">Today</string>
+    <string name="calendar">Calendar</string>
+    <string name="insights">Insights</string>
+    <string name="settings">Settings</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="allow">Allow</string>
+    <string name="off">Off</string>
+    <string name="undo">Undo</string>
+    <string name="done">Done</string>
+    <string name="taken">Taken</string>
+    <string name="not_set">Not set</string>
+    <string name="increase">Increase</string>
+    <string name="decrease">Decrease</string>
+    <string name="current">Current</string>
+    <string name="approx">~%1$s</string>
+    <string name="date_range">%1$s – %2$s</string>
+    <string name="day_n">Day %1$d</string>
+    <string name="of_about">of ~%1$d</string>
+    <string name="of_total">of %1$d</string>
+
+    <string name="channel_dose">Dose reminders</string>
+    <string name="channel_cycle">Cycle notices</string>
+    <string name="channel_log">Daily log reminder</string>
+    <string name="public_text">You have a reminder</string>
+
+    <string name="disclaimer">Perixd shows estimates from what you log. It isn\'t medical advice and isn\'t a method of contraception.</string>
+    <string name="estimate_only">Estimate only, not contraception.</string>
+
+    <string name="welcome_title">Start with your last period</string>
+    <string name="welcome_text">Log the days you bled and Perixd will predict your next period, fertile window and ovulation. The more cycles you log, the better the estimates get.</string>
+    <string name="log_today">Log today</string>
+    <string name="open_calendar">Open calendar</string>
+    <string name="open_settings">Open settings</string>
+    <string name="setup_method_text">Tell Perixd where you are in your current pack or cycle to see it here and get reminders.</string>
+    <string name="notifications_off">Notifications are off, so reminders can\'t reach you.</string>
+
+    <string name="period_day">Period, day %1$d</string>
+    <string name="period_today">Period expected today</string>
+    <string name="period_in_range">Period in %1$d–%2$d days</string>
+    <string name="expected_on">Expected %1$s</string>
+    <string name="next_expected">Next one expected %1$s</string>
+    <string name="fertile_window">Fertile window</string>
+    <string name="fertile_now">You\'re in it today</string>
+    <string name="ovulation">Ovulation</string>
+    <string name="bleeding_today">Bleeding logged today</string>
+    <string name="bleed_expected">Bleed expected around %1$s</string>
+    <string name="last_bleed">Last bleed started %1$s</string>
+    <string name="fertility_hidden">Ovulation and fertile-window estimates are hidden while you use a hormonal method; they don\'t apply to it.</string>
+    <string name="no_bleed_prediction">Bleeding on this method is often irregular, so Perixd doesn\'t predict it. Ovulation and fertile-window estimates are hidden.</string>
+    <string name="new_pack_on">New pack on %1$s</string>
+    <string name="new_patch_on">New patch on %1$s</string>
+    <string name="new_ring_on">New ring on %1$s</string>
+    <string name="break_starts">Break starts %1$s</string>
+    <string name="placebo_starts">Placebo pills start %1$s</string>
+    <string name="patch_free_starts">Patch-free week starts %1$s</string>
+    <string name="ring_free_starts">Ring-free week starts %1$s</string>
+
+    <string name="pos_pill">Pill %1$d of %2$d</string>
+    <string name="pos_placebo">Placebo %1$d of %2$d</string>
+    <string name="pos_break">Break day %1$d of %2$d</string>
+    <string name="pos_patch">Patch week %1$d</string>
+    <string name="pos_patch_free">Patch-free day %1$d of %2$d</string>
+    <string name="pos_ring">Ring day %1$d of %2$d</string>
+    <string name="pos_ring_free">Ring-free day %1$d of %2$d</string>
+    <string name="pos_day">Day %1$d of %2$d</string>
+
+    <string name="pill_taken">taken</string>
+    <string name="pill_missed">should be out, not marked as taken</string>
+    <string name="pill_in_pack">still in the pack</string>
+    <string name="break_days">Break</string>
+    <string name="mark_pill">Mark pill %1$d as taken</string>
+    <string name="mark_pill_late">Mark pill %1$d (%2$s) as taken</string>
+    <string name="mark_done">Mark done: %1$s</string>
+    <string name="taken_at">Taken at %1$s</string>
+    <string name="done_at">Done at %1$s</string>
+    <string name="next_dose">Next: %1$s, %2$s</string>
+
+    <string name="dose_pill">Time for pill %1$d of %2$d</string>
+    <string name="dose_placebo">Time for placebo pill %1$d of %2$d</string>
+    <string name="dose_patch_apply">Time to put on a new patch</string>
+    <string name="dose_patch_change">Time to change your patch (%1$d of %2$d)</string>
+    <string name="dose_patch_remove">Time to take off your patch</string>
+    <string name="dose_ring_insert">Time to insert a new ring</string>
+    <string name="dose_ring_remove">Time to remove your ring</string>
+    <string name="dose_ring_change">Time to replace your ring</string>
+    <string name="dose_injection">Your injection is due</string>
+    <string name="dose_hint_pill">Tap Taken once you\'ve taken it.</string>
+    <string name="dose_hint_other">Tap Done once it\'s done.</string>
+    <string name="dose_overdue">Due %1$s and not marked yet.</string>
+    <string name="snooze_action">Snooze %1$d min</string>
+
+    <string name="noun_pill">Pill</string>
+    <string name="noun_patch_apply">New patch</string>
+    <string name="noun_patch_change">Patch change</string>
+    <string name="noun_patch_remove">Patch removal</string>
+    <string name="noun_ring_insert">New ring</string>
+    <string name="noun_ring_remove">Ring removal</string>
+    <string name="noun_ring_change">Ring change</string>
+    <string name="noun_injection">Injection</string>
+    <string name="new_pack_soon">Your new pack starts tomorrow</string>
+    <string name="on_day_at">%1$s at %2$s</string>
+    <string name="around_day">Around %1$s</string>
+    <string name="fertile_today">Fertile window starts today</string>
+    <string name="log_reminder_title">How are you today?</string>
+    <string name="log_reminder_text">Log your flow and symptoms.</string>
+
+    <string name="how_today">How are you today?</string>
+    <string name="flow">Flow</string>
+    <string name="flow_none">None</string>
+    <string name="flow_spotting">Spotting</string>
+    <string name="flow_light">Light</string>
+    <string name="flow_medium">Medium</string>
+    <string name="flow_heavy">Heavy</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="symptom_cramps">Cramps</string>
+    <string name="symptom_headache">Headache</string>
+    <string name="symptom_back_pain">Back pain</string>
+    <string name="symptom_bloating">Bloating</string>
+    <string name="symptom_breast_tenderness">Breast tenderness</string>
+    <string name="symptom_fatigue">Tiredness</string>
+    <string name="symptom_nausea">Nausea</string>
+    <string name="symptom_acne">Acne</string>
+    <string name="symptom_mood">Mood changes</string>
+    <string name="intensity_none">None</string>
+    <string name="intensity_mild">Mild</string>
+    <string name="intensity_moderate">Moderate</string>
+    <string name="intensity_severe">Severe</string>
+    <string name="note">Note</string>
+    <string name="log_symptoms">Symptoms and notes</string>
+    <string name="edit_log">Edit today\'s log</string>
+
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
+    <string name="back_to_today">Back to today</string>
+    <string name="legend_period">Period</string>
+    <string name="legend_predicted">Predicted</string>
+    <string name="legend_fertile">Fertile window</string>
+    <string name="legend_ovulation">Ovulation</string>
+    <string name="legend_spotting">Spotting</string>
+    <string name="legend_symptoms">Symptoms or note</string>
+    <string name="legend_dose_done">Dose done</string>
+    <string name="legend_dose_missed">Dose not marked</string>
+    <string name="calendar_hint">Tap a day to log flow, symptoms and doses. Swipe sideways to change month.</string>
+
+    <string name="your_cycle">Your cycle</string>
+    <string name="average_cycle">Average cycle</string>
+    <string name="average_period">Average period</string>
+    <string name="range_days">%1$d–%2$d days</string>
+    <string name="regularity">Regularity</string>
+    <string name="very_regular">Very regular</string>
+    <string name="regular">Regular</string>
+    <string name="irregular">Irregular</string>
+    <string name="varies_by">Varies by %1$d days</string>
+    <string name="cycles_logged">Cycles counted</string>
+    <string name="recent_six">Up to the last 6</string>
+    <string name="cycle_day">Cycle day</string>
+    <string name="next_period">Next period</string>
+    <string name="more_cycles_needed">Log at least three cycles for reliable averages. Until then Perixd uses the usual lengths from Settings.</string>
+    <string name="doses_last_30">Last 30 days</string>
+    <string name="doses_marked">%1$d of %2$d doses marked</string>
+    <string name="flow_by_day">Flow by period day</string>
+    <string name="flow_scale">Average flow on each day of your last periods, from spotting to heavy.</string>
+    <string name="symptoms_180">Symptoms, last 6 months</string>
+    <string name="no_symptoms">No symptoms logged yet.</string>
+    <string name="symptom_detail">%1$s, usually cycle day %2$s</string>
+    <string name="cycle_history">Cycle history</string>
+
+    <string name="section_method">Contraception</string>
+    <string name="method">Method</string>
+    <string name="method_none">None or non-hormonal</string>
+    <string name="method_none_hint">Condoms, fertility awareness or nothing. Fertility estimates are shown.</string>
+    <string name="method_pill">Pill</string>
+    <string name="method_pill_hint">Combined or progestin-only, any pack.</string>
+    <string name="method_patch">Patch</string>
+    <string name="method_patch_hint">A new patch every week.</string>
+    <string name="method_ring">Vaginal ring</string>
+    <string name="method_ring_hint">Three weeks in, one week out, or continuous.</string>
+    <string name="method_injection">Injection</string>
+    <string name="method_injection_hint">Every few weeks, e.g. every 12 or 13 weeks.</string>
+    <string name="method_long_acting">IUD or implant</string>
+    <string name="method_long_acting_hint">No reminders. Choose whether it\'s hormonal.</string>
+    <string name="pack_type">Pack</string>
+    <string name="pack_21_7">21 pills, 7-day break</string>
+    <string name="pack_24_4">24 pills, 4-day break</string>
+    <string name="pack_21_7p">21 pills + 7 placebo</string>
+    <string name="pack_24_4p">24 pills + 4 placebo</string>
+    <string name="pack_28">28 active pills, no break</string>
+    <string name="pack_custom">Custom: %1$d + %2$d placebo + %3$d break</string>
+    <string name="active_pills">Active pills</string>
+    <string name="placebo_pills">Placebo pills</string>
+    <string name="break_length">Break days</string>
+    <string name="break_length_hint">Days without pills; reminders pause.</string>
+    <string name="hormone_free_week">Hormone-free week</string>
+    <string name="hormone_free_week_hint">Off for continuous use.</string>
+    <string name="injection_interval">Every</string>
+    <string name="hormonal_method">Hormonal</string>
+    <string name="hormonal_method_hint">On for a hormonal IUD or implant, off for a copper IUD. Fertility estimates only show when it\'s off.</string>
+    <string name="today_is">Today is day</string>
+    <string name="today_is_hint">Set where you are in your current pack or cycle.</string>
+    <string name="cycle_started">Current pack or cycle started</string>
+
+    <string name="section_reminders">Reminders</string>
+    <string name="dose_reminders">Dose reminders</string>
+    <string name="reminder_time">Reminder time</string>
+    <string name="weekend_time_switch">Different time on weekends</string>
+    <string name="weekend_time">Weekend reminder time</string>
+    <string name="keep_until_done">Keep until marked done</string>
+    <string name="keep_until_done_hint">The reminder stays in your notifications. On Android 14 and later it can be swiped away, so Perixd brings it straight back until you mark the dose.</string>
+    <string name="repeat_alert">Alert again</string>
+    <string name="repeat_alert_hint">Sound the reminder again until the dose is marked.</string>
+    <string name="snooze_button">Snooze button</string>
+    <string name="no_snooze">No snooze</string>
+    <string name="new_pack_notice">New pack reminder</string>
+    <string name="new_pack_notice_hint">A notice the day before your next pack starts.</string>
+    <string name="advance_notice">Days of advance notice</string>
+    <string name="advance_notice_hint">A heads-up before each change or injection.</string>
+
+    <string name="section_cycle_notices">Cycle notifications</string>
+    <string name="period_notice">Period coming</string>
+    <string name="bleed_notice">Bleed coming</string>
+    <string name="fertile_notice">Fertile window starts</string>
+    <string name="notice_time">Time for these notices</string>
+    <string name="notice_time_hint">Also used for advance and new pack notices.</string>
+    <string name="daily_log">Daily log reminder</string>
+    <string name="daily_log_hint">Only when the day has nothing logged yet.</string>
+    <string name="daily_log_time">Daily log time</string>
+
+    <string name="section_notification_behavior">Notification behavior</string>
+    <string name="hide_on_lock_screen">Hide details on the lock screen</string>
+    <string name="hide_on_lock_screen_hint">Shows only \"You have a reminder\" until you unlock.</string>
+    <string name="sound_vibration">Sound, vibration and pop-up</string>
+    <string name="sound_vibration_hint">Opens Android\'s settings for dose reminders.</string>
+    <string name="all_notification_settings">All notification settings</string>
+    <string name="exact_alarms_off">Exact alarms aren\'t allowed, so reminders may be late.</string>
+    <string name="reliability_note">Reminders use exact alarms and are set again after a restart, an app update, or a clock or time zone change. They can still be held back if notifications are blocked, the app is force-stopped, or a battery saver closes it.</string>
+
+    <string name="section_cycle">Cycle</string>
+    <string name="usual_cycle">Usual cycle length</string>
+    <string name="usual_hint">Used until you\'ve logged a few cycles.</string>
+    <string name="usual_period">Usual period length</string>
+    <string name="luteal_phase">Days from ovulation to period</string>
+    <string name="luteal_phase_hint">Usually 14. Change it only if you know yours.</string>
+
+    <string name="section_appearance">Appearance</string>
+    <string name="theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">Follow system</string>
+    <string name="language">Language</string>
+
+    <string name="section_privacy">Privacy</string>
+    <string name="privacy_text">Everything you log stays on this device. Perixd has no internet access, no ads and no analytics, and its data is left out of cloud backups.</string>
+    <string name="delete_logs">Delete all logs</string>
+    <string name="delete_logs_hint">Removes every logged day and dose. Settings stay.</string>
+    <string name="delete_logs_confirm">This removes every logged day, symptom and dose from this device. It can\'t be undone.</string>
+    <string name="about">Perixd %1$s, free software under the GNU AGPL 3.0.</string>
+
+    <plurals name="days">
+        <item quantity="one">%1$d day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="one">%1$d week</item>
+        <item quantity="other">%1$d weeks</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%1$d minute</item>
+        <item quantity="other">%1$d minutes</item>
+    </plurals>
+    <plurals name="every_minutes">
+        <item quantity="one">Every minute</item>
+        <item quantity="other">Every %1$d minutes</item>
+    </plurals>
+    <plurals name="every_hours">
+        <item quantity="one">Every hour</item>
+        <item quantity="other">Every %1$d hours</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="one">%1$d day before</item>
+        <item quantity="other">%1$d days before</item>
+    </plurals>
+    <plurals name="period_in">
+        <item quantity="one">Period in %1$d day</item>
+        <item quantity="other">Period in %1$d days</item>
+    </plurals>
+    <plurals name="period_late">
+        <item quantity="one">Period %1$d day late</item>
+        <item quantity="other">Period %1$d days late</item>
+    </plurals>
+    <plurals name="period_soon">
+        <item quantity="one">Period expected in %1$d day</item>
+        <item quantity="other">Period expected in %1$d days</item>
+    </plurals>
+    <plurals name="bleed_soon">
+        <item quantity="one">Bleed expected in %1$d day</item>
+        <item quantity="other">Bleed expected in %1$d days</item>
+    </plurals>
+    <plurals name="dose_soon">
+        <item quantity="one">%1$s in %2$d day</item>
+        <item quantity="other">%1$s in %2$d days</item>
+    </plurals>
+</resources>
